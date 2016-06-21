@@ -5,3 +5,7 @@
   padding: 0;
   text-decoration: none;
 }
+
+.navbar-breadcrumb{ /* Seletor do container da breadcrumb */
+  padding: 0 20px; /* Atributo de margem interna na vertical e horizontal */
+}

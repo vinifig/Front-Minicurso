@@ -2,11 +2,38 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" charset="utf-8">
     <script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="styles/style.css" type="text/css" charset="utf-8">
     <title>LTIA-Commerce</title>
   </head>
   <body>
-    LTIA-Commerce
+    <nav class="navbar navbar-default"> <!-- Container da barra de navegação -->
+      <div class="container-fluid"> <!-- Container com 100% de largura -->
+        <div class="navbar-header"> <!-- Container da logo ou titulo do site -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">LTIA-Commerce</a> <!-- Link para a página inicial -->
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar"><!-- Container da lista de links -->
+          <ul class="nav navbar-nav"> <!-- Lista de links da barra de navegação -->
+            <li class="active"><a href="#">Produtos</a></li>
+            <li><a href="#">Link desativado</a></li>
+            <li><a href="#">Link desativado</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar-breadcrumb"> <!-- Container da breadcrumb -->
+      <ul class="breadcrumb"> <!-- implementação da breadcrumb do Bootstrap -->
+        <li><a href="#">Página Inicial</a></li> <!-- links -->
+        <li class="active">Produtos</li> <!-- Página atual -->
+      </ul>
+    </nav>
   </body>
 </html>
