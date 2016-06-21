@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">  <!-- Meta-tag para definição virtual do tamanho da tela -->
     <script src="scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="scripts/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" charset="utf-8">
+    <!-- <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" charset="utf-8"> -->
+    <link rel="stylesheet" href="styles/yeti.min.css" type="text/css" charset="utf-8">
     <script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="styles/style.css" type="text/css" charset="utf-8">
     <title>LTIA-Commerce</title>
@@ -38,24 +40,60 @@
         </ul>
       </nav>
     </header>
-    <section class="body-page">
-      <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-      <div class="row">
-        <div class="col-md-6">.col-xs-12 .col-md-8</div>
-        <div class="col-md-4">.col-xs-6 .col-md-4</div>
-      </div>
+    <section class="body-page grid">
+      <aside class="category-products">
+        <div class="panel panel-default">
+          <div class="panel-heading">Categorias</div>
+          <div class="list-group">
+            <a href="#" class="list-group-item">LTIA Gourmet</a>
+            <a href="#" class="list-group-item">Nodes</a>
+            <a href="#" class="list-group-item active">Develop Spammers</a>
+          </div>
+        </div>
+      </aside>
+      <div class="list-products">
+        <h1 class="list-products-title">Develop Spammers</h1>
 
-      <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-      <div class="row">
-        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-      </div>
-
-      <!-- Columns are always 50% wide, on mobile and desktop -->
-      <div class="row">
-        <div class="col-xs-6">.col-xs-6</div>
-        <div class="col-xs-6">.col-xs-6</div>
+        <div class="card panel panel-default">
+          <div class="panel-heading">
+            <img src="assets/slack.jpg">
+          </div>
+          <div class="panel-body">
+            Spam de Node
+          </div>
+        </div>
+        <div class="card panel panel-default">
+          <div class="panel-heading">
+            <img src="assets/slack.jpg">
+          </div>
+          <div class="panel-body">
+            Spam de Angular
+          </div>
+        </div>
+        <div class="card panel panel-default">
+          <div class="panel-heading">
+            <img src="assets/slack.jpg">
+          </div>
+          <div class="panel-body">
+            Spam do slackbot
+          </div>
+        </div>
+        <div class="card panel panel-default">
+          <div class="panel-heading">
+            <img src="assets/slack.jpg">
+          </div>
+          <div class="panel-body">
+            Spam de LTIA Gourmet
+          </div>
+        </div>
+        <div class="card panel panel-default">
+          <div class="panel-heading">
+            <img src="assets/slack.jpg">
+          </div>
+          <div class="panel-body">
+            Spam de Paparvore
+          </div>
+        </div>
       </div>
     </section>
   </body>

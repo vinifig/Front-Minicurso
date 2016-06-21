@@ -9,3 +9,39 @@
 .navbar-breadcrumb{ /* Seletor do container da breadcrumb */
   padding: 0 20px; /* Atributo de margem interna na vertical e horizontal */
 }
+
+.category-products, .list-products{
+  display: inline-block;
+  float:left;
+}
+
+.category-products{
+  width: 300px;
+}
+
+.list-products{
+  padding: 0 30px;
+  width: calc(100vw - 317px);
+  clear:right;
+}
+
+.list-products .list-products-title{
+  margin-top: -4px;
+}
+
+.list-products .card.panel{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.list-products .card.panel, .list-products .card.panel .panel-heading img{
+  width:300px;
+}
+
+.list-products .card.panel .panel-heading{
+  padding:0;
+}
+
+.list-products .card.panel .panel-heading img{
+  height:150px;
+}
