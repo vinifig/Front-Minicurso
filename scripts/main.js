@@ -1,5 +1,5 @@
 // implementação es5:
-var produtoTemplate = '<div class="card panel panel-default"><div class="panel-heading"><img src="assets/slack.jpg"></div><div class="panel-body"><<product_name>></div></div>'
+var produtoTemplate = '<div class="card panel panel-default"><div class="panel-heading"><img src="assets/slack.jpg"></div><div class="panel-body"><<produto_name>></div></div>'
 
 // implementação es6:
 // const produtoTemplate = `<div class="card panel panel-default">
@@ -13,6 +13,7 @@ var produtoTemplate = '<div class="card panel panel-default"><div class="panel-h
 
 var inflaProduto = function(produto){
   var produtoFinal = produtoTemplate.replace("<<produto_name>>", produto.name)
+
   $(".list-products").append(produtoFinal)
 }
 $(document).ready(function(){
