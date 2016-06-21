@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+body{
+  background-color: #6c969d;
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav > ul > a > li{
+  display: inline-block;
+  margin-left: 20px;
+  text-decoration: underline;
+}
+
+h1{
+  font-size: 20px;
+  color: white;
+}
+
+h1, nav{
+  display:inline-block;
+}
+
+#bacon_image{
+  width: 300px;
+}
+
+p{
+  text-indent: 30px;
+  padding: 20px;
+}
