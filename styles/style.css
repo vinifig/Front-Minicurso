@@ -12,16 +12,16 @@
 
 .category-products, .list-products{
   display: inline-block;
-  float:left;
 }
 
 .category-products{
   width: 300px;
+  vertical-align: top;
 }
 
 .list-products{
   padding: 0 30px;
-  width: calc(100vw - 317px);
+  width: calc(100vw - 330px);
   clear:right;
 }
 
@@ -44,4 +44,12 @@
 
 .list-products .card.panel .panel-heading img{
   height:150px;
+}
+
+.body-page{
+  clear:both;
+}
+
+body{
+  padding-bottom:30px;
 }
