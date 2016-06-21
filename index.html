@@ -3,37 +3,60 @@
   <head>
     <meta charset="utf-8">
     <script src="scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="scripts/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" charset="utf-8">
     <script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="styles/style.css" type="text/css" charset="utf-8">
     <title>LTIA-Commerce</title>
   </head>
   <body>
-    <nav class="navbar navbar-default"> <!-- Container da barra de navegação -->
-      <div class="container-fluid"> <!-- Container com 100% de largura -->
-        <div class="navbar-header"> <!-- Container da logo ou titulo do site -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">LTIA-Commerce</a> <!-- Link para a página inicial -->
+    <header>
+      <nav class="navbar navbar-default"> <!-- Container da barra de navegação -->
+        <div class="container-fluid"> <!-- Container com 100% de largura -->
+          <div class="navbar-header"> <!-- Container da logo ou titulo do site -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">LTIA-Commerce</a> <!-- Link para a página inicial -->
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar"><!-- Container da lista de links -->
+            <ul class="nav navbar-nav"> <!-- Lista de links da barra de navegação -->
+              <li class="active"><a href="#">Produtos</a></li>
+              <li><a href="#">Link desativado</a></li>
+              <li><a href="#">Link desativado</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="main-navbar"><!-- Container da lista de links -->
-          <ul class="nav navbar-nav"> <!-- Lista de links da barra de navegação -->
-            <li class="active"><a href="#">Produtos</a></li>
-            <li><a href="#">Link desativado</a></li>
-            <li><a href="#">Link desativado</a></li>
-          </ul>
-        </div>
+      </nav>
+      <nav class="navbar-breadcrumb"> <!-- Container da breadcrumb -->
+        <ul class="breadcrumb"> <!-- implementação da breadcrumb do Bootstrap -->
+          <li><a href="#">Página Inicial</a></li> <!-- links -->
+          <li class="active">Produtos</li> <!-- Página atual -->
+        </ul>
+      </nav>
+    </header>
+    <section class="body-page">
+      <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+      <div class="row">
+        <div class="col-md-6">.col-xs-12 .col-md-8</div>
+        <div class="col-md-4">.col-xs-6 .col-md-4</div>
       </div>
-    </nav>
-    <nav class="navbar-breadcrumb"> <!-- Container da breadcrumb -->
-      <ul class="breadcrumb"> <!-- implementação da breadcrumb do Bootstrap -->
-        <li><a href="#">Página Inicial</a></li> <!-- links -->
-        <li class="active">Produtos</li> <!-- Página atual -->
-      </ul>
-    </nav>
+
+      <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+      <div class="row">
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+
+      <!-- Columns are always 50% wide, on mobile and desktop -->
+      <div class="row">
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+      </div>
+    </section>
   </body>
 </html>
