@@ -183,6 +183,86 @@ $ git checkout static_project
 
 ## 2. Buscando informações externas
 
+Até agora, construímos apenas a interface gráfica do site, ainda precisamos buscar os dados dinamicamente de algum lugar e mostrar as informações. Para isso utilizaremos o `JQuery`, um framework Javascript comumente utilizado para animações, que facilita a manipulação do `DOM` e da consulta `HTTP` via `ajax`.
+
+A partir deste ponto, será necessário a utilização de um servidor web por causa dos algoritmos de segurança dos navegadores, que não deixam sites pegarem arquivos de seu computador. Para isso:
+
+``` sh
+$ npm install -g http-server
+$ http-server /path/to/project
+```
+
+Dentro da pasta `scripts`, crie um novo arquivo chamado `data.json` com o conteúdo a seguir, este arquivo providenciará os dados do seu site.
+``` json
+{
+  "result": [
+    {
+      "name": "Spam de Node"
+    },
+    {
+      "name": "Spam de Angular"
+    },
+    {
+      "name": "Spam do slackbot"
+    },
+    {
+      "name": "Spam de LTIA GOURMEET"
+    },
+    {
+      "name": "Spam do Paparvore"
+    }
+  ]
+}
+```
+
+Criado o arquivo de dados, buscaremos o dado dele a partir da nossa página. Abra o `console` de seu `Browser`, muito provavelmente com o comando `ctrl`+`shift`+`i`. Nele você encontrará uma mensagem escrita `Olá, mundo`, feita pelo método `console.debug` no arquivo `main.js`.
+
+Abra o arquivo `main.js` e insira o seguinte código:
+
+``` js
+$(document).ready(function(){
+  $.ajax({
+    url: 'scripts/data.json', // URL que fornecerá o dado
+    method: "GET" // Verbo HTTP que será utilizado
+  }).done(function(data){ // Listener, ou callback, da nossa consulta
+    console.log(data); // Mostra os dados adquiridos na consulta
+  })
+})
+```
+
+Com este código, conseguimos os dados de produtos de uma fonte externa, agora é necessário inserir este conteúdo no site. Para isso devemos primeiro remover todos os `containers de produto` na `index.html`, criar uma variável que servirá de template para nossos produtos, e depois inflar o produto no `container de produtos`. O código final ficará parecido com isto:
+
+``` js
+// implementação es5:
+var produtoTemplate = '<div class="card panel panel-default"><div class="panel-heading"><img src="assets/slack.jpg"></div><div class="panel-body"><<product_name>></div></div>'
+
+// implementação es6:
+// const produtoTemplate = `<div class="card panel panel-default">
+//   <div class="panel-heading">
+//     <img src="assets/slack.jpg">
+//   </div>
+//   <div class="panel-body">
+//     <<produto_name>>
+//   </div>
+// </div>`
+
+var inflaProduto = function(produto){
+  var produtoFinal = produtoTemplate.replace("<<produto_name>>", produto.name)
+  $(".list-products").append(produtoFinal)
+}
+$(document).ready(function(){
+  $.ajax({
+    url: 'scripts/data.json', // URL que fornecerá o dado
+    method: "GET" // Verbo HTTP que será utilizado
+  }).done(function(data){ // Listener, ou callback, da nossa consulta
+    console.log(data); // Mostra os dados adquiridos na consulta
+    for(var i = 0; i < data.result.length; i++){
+      inflaProduto(data.result[i]);
+    }
+  })
+})
+```
+
 ### Visualizando o resultado
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O resultado desta etapa pode ser observado no branch `external_data_project`:
 
